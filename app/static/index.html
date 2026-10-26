@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <title>Context — your thoughtful AI chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Context home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>context<span class="brand-period">.</span></span>
+      </a>
+      <button class="new-chat" id="new-chat" type="button">
+        <span class="plus" aria-hidden="true">＋</span> New conversation
+        <span class="shortcut">⌘ K</span>
+      </button>
+      <div class="side-label">YOUR SPACE</div>
+      <div class="conversation-item active">
+        <span class="conversation-icon" aria-hidden="true">◌</span>
+        <span id="conversation-label">New conversation</span>
+        <span class="active-dot" aria-hidden="true"></span>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="privacy-note"><span class="lock-icon" aria-hidden="true">⌑</span><span>Conversation history stays<br>on this running server.</span></div>
+        <div class="profile">
+          <div class="avatar">C</div>
+          <div><strong>Personal space</strong><span>Gemini · private session</span></div>
+          <span class="profile-menu" aria-hidden="true">···</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="model-pill"><span class="model-sparkle" aria-hidden="true">✳</span> Gemini <span class="model-version">Flash</span><span class="chevron">⌄</span></div>
+        <div class="topbar-right"><span class="status"><i></i> Ready to chat</span><button class="icon-button" aria-label="More options" type="button">···</button></div>
+      </header>
+
+      <section class="chat-scroll" id="chat-scroll">
+        <div class="welcome" id="welcome">
+          <div class="welcome-eyebrow"><span class="eyebrow-line"></span> A little more thoughtful <span class="eyebrow-line"></span></div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+            <div class="hero-core"><span class="core-star">✳</span></div>
+            <span class="spark spark-one">✦</span><span class="spark spark-two">·</span><span class="spark spark-three">✧</span>
+          </div>
+          <h1>Good conversations<br>have <em>context.</em></h1>
+          <p class="welcome-copy">I'm here to think things through with you.<br>Pick up a thread, follow a curiosity, or start anywhere.</p>
+          <div class="suggestions">
+            <button class="suggestion" type="button" data-prompt="Help me think through a decision I'm facing"><span class="suggestion-icon lavender">↗</span><span><strong>Think it through</strong><small>Help me make a decision</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" type="button" data-prompt="I want to learn something new. Can you suggest an interesting topic?"><span class="suggestion-icon peach">✳</span><span><strong>Explore an idea</strong><small>Follow a new curiosity</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" type="button" data-prompt="Can you help me get started on a project?"><span class="suggestion-icon mint">⌁</span><span><strong>Get unstuck</strong><small>Find a place to begin</small></span><span class="suggestion-arrow">↗</span></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-area">
+        <div class="error-banner" id="error-banner" role="alert" hidden></div>
+        <form class="composer" id="chat-form">
+          <textarea id="message-input" rows="1" maxlength="4000" placeholder="Ask anything, or just start talking..." aria-label="Your message"></textarea>
+          <div class="composer-tools"><span class="composer-hint">A thoughtful answer starts with a good question.</span><div class="composer-actions"><span class="char-count" id="char-count">0 / 4,000</span><button class="send-button" id="send-button" type="submit" aria-label="Send message"><span>↑</span></button></div></div>
+        </form>
+        <div class="disclaimer"><span>✳</span> Context can make mistakes. Trust your judgment, always.</div>
+      </footer>
+    </main>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
